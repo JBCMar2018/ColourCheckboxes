@@ -31,7 +31,6 @@ public class MainController {
         model.addAttribute("colours",colours.findAll());
         //Add an attribute for the user
         model.addAttribute("person",users.findAppUserByFirstNameIgnoreCase(theName));
-
         return "index";
     }
 
@@ -43,7 +42,7 @@ public class MainController {
             return "index";
         }
         users.save(user);
-        return "redirect:/";
+        return "redirect:/?name="+user.getFirstName();
     }
 
     @PostConstruct

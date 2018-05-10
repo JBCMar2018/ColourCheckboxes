@@ -8,6 +8,7 @@
         <h1 th:text ="${person.firstName}+'\'s colours'"></h1>
         <form th:action="@{/savecolours}" th:object="${person}" method="post">
             <input type="hidden" th:field="${person.id}">
+            <input type="hidden" th:field="${person.firstName}">
             <div th:each="eachColour:${colours}">
              <input type="checkbox" th:field="${person.myColours}" th:value="${eachColour.id}" th:text ="${eachColour.name}">
             </div>
