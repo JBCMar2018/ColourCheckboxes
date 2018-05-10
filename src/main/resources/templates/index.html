@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1 th:text ="${person.firstName}+'\'s colours'"></h1>
+        <form th:action="@{/savecolours}" th:object="${person}" method="post">
+            <input type="hidden" th:field="${person.id}">
+            <div th:each="eachColour:${colours}">
+             <input type="checkbox" th:field="${person.myColours}" th:value="${eachColour.id}" th:text ="${eachColour.name}">
+            </div>
+            <button type="submit">Save</button>
+        </form>
+        </form>
+</body>
+</html>
