@@ -35,7 +35,7 @@ public class MainController {
         return "index";
     }
 
-    @PostMapping("/")
+    @PostMapping("/savecolours")
     public String saveColours(@Valid @ModelAttribute("person") AppUser user, BindingResult result)
     {
         if(result.hasErrors())
